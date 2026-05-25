@@ -19,6 +19,41 @@ const genAI = new GoogleGenerativeAI(apiKey || "dummy-key");
  */
 export async function generateTestSuite(prompt) {
   const modelName = process.env.GEMINI_MODEL || "gemini-1.5-flash";
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey || apiKey.trim() === "") {
+    console.log("[Mock API] Generating simulated test suite (No GEMINI_API_KEY found)");
+    
+    // Simulate 2 seconds of AI processing latency
+    await new Promise(resolve => setTimeout(resolve, 2200));
+
+    const isPayment = /payment|stripe|invoice|checkout/i.test(prompt);
+    const isLogin = /login|auth|register|user/i.test(prompt);
+    const targetName = isPayment ? "PaymentProcessor" : isLogin ? "AuthService" : "ComponentProcessor";
+
+    return {
+      unitTests: [
+        `// Unit tests for ${targetName}\nimport { ${targetName} } from './index';`,
+        `describe('${targetName} - Unit tests', () => {\n  it('should process valid input correctly', () => {\n    const response = ${targetName}.process({ id: 1, test: true });\n    expect(response.success).toBe(true);\n  });\n\n  it('should throw validation error on empty payload', () => {\n    expect(() => ${targetName}.process({})).toThrow('Validation Error');\n  });\n});`
+      ].join("\n\n"),
+      integrationTests: [
+        `// Integration tests for ${targetName}\nimport request from 'supertest';\nimport app from './app';`,
+        `describe('${targetName} - Integration pipelines', () => {\n  it('should pipe requests to the database layer', async () => {\n    const res = await request(app)\n      .post('/api/data')\n      .send({ payload: 'mock-data' });\n    expect(res.statusCode).toEqual(200);\n    expect(res.body.dbSaved).toBe(true);\n  });\n});`
+      ].join("\n\n"),
+      edgeCases: [
+        `// Edge cases for ${targetName}`,
+        `describe('${targetName} - Edge condition boundaries', () => {\n  it('should handle zero bounds gracefully', () => {\n    const response = ${targetName}.process({ value: 0 });\n    expect(response.status).toBe('zero_limit');\n  });\n\n  it('should reject extremely large payload volumes', () => {\n    const hugeInput = 'x'.repeat(1000000);\n    expect(() => ${targetName}.process({ data: hugeInput })).toThrow();\n  });\n});`
+      ].join("\n\n"),
+      securityTests: [
+        `// Security tests for ${targetName}`,
+        `describe('${targetName} - Security checks', () => {\n  it('should prevent SQL Injection attempts', () => {\n    const sqlPayload = "1' OR '1'='1";\n    const clean = ${targetName}.sanitize(sqlPayload);\n    expect(clean).not.toContain("'");\n  });\n\n  it('should block requests without valid authentication tokens', async () => {\n    const response = await ${targetName}.authorize({ token: null });\n    expect(response.authorized).toBe(false);\n  });\n});`
+      ].join("\n\n"),
+      performanceTests: [
+        `// Performance tests for ${targetName}`,
+        `describe('${targetName} - Benchmark responses', () => {\n  it('should complete processing under 150ms', async () => {\n    const start = Date.now();\n    await ${targetName}.runBenchmark();\n    const duration = Date.now() - start;\n    expect(duration).toBeLessThan(150);\n  });\n});`
+      ].join("\n\n")
+    };
+  }
   
   // Define response schema for arrays as requested
   const responseSchema = {
