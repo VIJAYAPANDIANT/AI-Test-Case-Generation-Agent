@@ -83,7 +83,7 @@ export default function Hero() {
             </span>
           </span>{" "}
           <div className="h-[1.4em] inline-flex items-center justify-center min-w-[280px] pb-2">
-            <span className={`inline-block bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent transition-all duration-300 ${fadeState}`}>
+            <span className={`inline-block bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent transition-all duration-300 leading-normal pb-2 ${fadeState}`}>
               {ROTATING_TEXTS[textIndex]}
             </span>
           </div>
