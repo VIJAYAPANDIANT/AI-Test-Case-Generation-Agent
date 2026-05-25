@@ -3,7 +3,6 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
   <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained">
-  <img src="https://img.shields.io/github/license/VIJAYAPANDIANT/AI-Test-Case-Generation-Agent?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
   <img src="https://img.shields.io/badge/Next.js-15.x-blue?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/React-19.x-20232a?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
@@ -214,6 +213,6 @@ Send specifications/code and receive a fully generated, multi-category test suit
 ## 📞 Administrator & Contact Details
 
 - **Admin Name**: **Vijayapandian T**
-- **Email Support**: [vijayapandian112007@gmail.com](mailto:vijayapandian112007@gmail.com)
-- **GitHub Profile**: [https://github.com/VIJAYAPANDIANT](https://github.com/VIJAYAPANDIANT)
-- **Git Repository**: [https://github.com/VIJAYAPANDIANT/AI-Test-Case-Generation-Agent.git](https://github.com/VIJAYAPANDIANT/AI-Test-Case-Generation-Agent.git)
+- **Email Support**: [Vijayapandian.T](mailto:vijayapandian112007@gmail.com)
+- **GitHub Profile**: [Vijayapandian.T](https://github.com/VIJAYAPANDIANT)
+- **Git Repository**: [Vijayapandian.T](https://github.com/VIJAYAPANDIANT/AI-Test-Case-Generation-Agent.git)
