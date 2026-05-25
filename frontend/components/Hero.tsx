@@ -98,7 +98,7 @@ export default function Hero() {
         <div className="mt-10 flex justify-center">
           <a
             href="#generator"
-            className="group relative inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6.5 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-indigo-500/25 hover:scale-[1.02] focus:outline-none"
+            className="group relative inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-indigo-500/25 hover:scale-[1.02] focus:outline-none"
           >
             <span className="absolute -inset-px rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-50" />
             <span className="relative flex items-center gap-2">
