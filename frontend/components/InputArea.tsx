@@ -67,7 +67,8 @@ export default function InputArea({
           <button
             type="submit"
             disabled={!prompt.trim() || isLoading}
-            className="group relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-purple-600 px-6 py-3 text-sm font-bold text-white shadow-[0_4px_15px_rgba(99,102,241,0.25)] transition-all hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(99,102,241,0.35)] focus:outline-none disabled:opacity-50 disabled:scale-100 disabled:shadow-none disabled:cursor-not-allowed"
+            className="group relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-purple-600 text-sm font-bold text-white shadow-[0_4px_15px_rgba(99,102,241,0.25)] transition-all hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(99,102,241,0.35)] focus:outline-none disabled:opacity-50 disabled:scale-100 disabled:shadow-none disabled:cursor-not-allowed"
+            style={{ paddingLeft: "2.25rem", paddingRight: "2.25rem", paddingTop: "0.9rem", paddingBottom: "0.9rem" }}
           >
             <Sparkles className="h-4 w-4" />
             <span>Generate Test Cases</span>
