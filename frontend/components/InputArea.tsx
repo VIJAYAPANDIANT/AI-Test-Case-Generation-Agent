@@ -64,3 +64,5 @@ export default function InputArea({ onGenerate, isLoading }: InputAreaProps) {
     </div>
   );
 }
+
+
