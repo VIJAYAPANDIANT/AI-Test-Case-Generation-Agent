@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Bot } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,16 +15,22 @@ export default function Footer() {
           <span className="font-bold text-slate-200 tracking-wide">TestGen AI</span>
         </div>
         
-        <p className="text-slate-500">
-          © {new Date().getFullYear()} TestGen AI. Built for Developers & Hackathons. All rights reserved.
-        </p>
+        <div className="flex flex-col gap-1 items-center sm:items-start text-left">
+          <p className="text-slate-500">
+            © {new Date().getFullYear()} TestGen AI. Built for Developers & Hackathons. All rights reserved.
+          </p>
+          <p className="text-slate-600 text-[10px]">
+            Admin: <span className="text-slate-500 font-medium">Vijayapandian T</span> &bull; Contact: <a href="mailto:vijayapandian112007@gmail.com" className="hover:text-indigo-400 transition-colors">vijayapandian112007@gmail.com</a>
+          </p>
+        </div>
         
         <div className="flex gap-4 text-slate-400">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+          <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          <a href="https://github.com/VIJAYAPANDIANT" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
         </div>
       </div>
     </footer>
   );
 }
+

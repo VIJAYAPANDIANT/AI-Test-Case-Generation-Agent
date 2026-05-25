@@ -6,7 +6,6 @@ import StatsSection from "../components/StatsSection";
 import InputArea from "../components/InputArea";
 import Loading from "../components/Loading";
 import ResultSection from "../components/ResultSection";
-import Footer from "../components/Footer";
 import { useGenerate } from "../hooks/useGenerate";
 import { Cpu, Layers, ShieldAlert, AlertCircle, Zap, FileCode } from "lucide-react";
 
@@ -142,9 +141,6 @@ export default function Home() {
           })}
         </div>
       </section>
-
-      {/* Page Footer */}
-      <Footer />
     </div>
   );
 }
