@@ -10,9 +10,21 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Set up CORS configurations
-const corsOrigin = process.env.CORS_ORIGIN || "http://localhost:3000";
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://ai-test-case-generation-agent.vercel.app"
+];
+
 app.use(cors({
-  origin: corsOrigin,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== "production") {
+      return callback(null, true);
+    } else {
+      return callback(new Error("CORS policy violation"), false);
+    }
+  },
   credentials: true
 }));
 
