@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Terminal } from "lucide-react";
+import { Bot } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-md">
-            <Terminal className="h-4 w-4" />
+            <Bot className="h-4.5 w-4.5" />
           </div>
           <span className="font-bold text-slate-200 tracking-wide">TestGen AI</span>
         </div>

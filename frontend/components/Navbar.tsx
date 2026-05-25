@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, Shield, Menu, X } from "lucide-react";
+import { Bot, Shield, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Navbar() {
           {/* Logo Section */}
           <div className="flex items-center gap-2 group cursor-pointer">
             <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-transform duration-300 group-hover:scale-105">
-              <Terminal className="h-5 w-5" />
+              <Bot className="h-5.5 w-5.5" />
               <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-60" />
             </div>
             <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-xl font-bold tracking-tight text-transparent">
