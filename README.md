@@ -1,16 +1,14 @@
-# 🚀 TestGen AI – AI-Powered Test Case Generation Agent
-
 <div align="center">
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
   <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained">
-  <img src="https://img.shields.io/github/license/VIJAYAPANDIANT/College-Discovery-Platform?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/license/VIJAYAPANDIANT/AI-Test-Case-Generation-Agent?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
-  <img src="https://img.shields.io/badge/Next.js-16.x-blue?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/Next.js-15.x-blue?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/React-19.x-20232a?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/PostgreSQL-18.x-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Node.js-20.x-green?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
 </div>
 
----
+# 🚀 TestGen AI – AI-Powered Test Case Generation Agent
 
 TestGen AI is a state-of-the-art test case generator designed to create high-coverage test suites instantly. Utilizing the power of **Google Gemini API**, TestGen AI scans your source code, requirements specs, or API endpoints to construct standard, copy-paste ready assertions spanning multiple testing frameworks (Jest, Mocha, PyTest, Supertest, Cypress, Playwright, etc.).
 
@@ -36,13 +34,13 @@ TestGen AI is a state-of-the-art test case generator designed to create high-cov
 
 ## 🛠️ Technology Stack
 
-### Frontend ([`frontend/`](file:///c:/AI%20Test%20Case%20Generation%20Agent/frontend))
+### Frontend
 - **Core Framework**: React 19 & Next.js 15 (App Router)
 - **Styling**: Tailwind CSS & Vanilla CSS transitions
 - **Icons**: Lucide React
 - **Client Routing**: Next.js App Router static optimization
 
-### Backend ([`backend/`](file:///c:/AI%20Test%20Case%20Generation%20Agent/backend))
+### Backend
 - **Core Environment**: Node.js (ES Modules)
 - **Routing Framework**: Express.js
 - **AI Core**: Google Gemini SDK (`@google/generative-ai`)
@@ -50,72 +48,72 @@ TestGen AI is a state-of-the-art test case generator designed to create high-cov
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository Structure & Files
+
+Here is the complete folder and file tree of the project:
 
 ```text
 .
-├── backend/
-│   ├── controllers/
-│   │   └── generateController.js
-│   ├── middleware/
-│   │   └── errorMiddleware.js
-│   ├── routes/
-│   │   └── generateRoutes.js
-│   ├── services/
-│   │   └── geminiService.js
-│   ├── utils/
-│   │   └── promptBuilder.js
-│   ├── .env
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── server.js
-│   └── vercel.json
+├── backend/                                # Node.js Express REST API server
+│   ├── controllers/                        # Handlers for API endpoints
+│   │   └── generateController.js           # Receives prompts and manages generation responses
+│   ├── middleware/                         # Middleware interceptors
+│   │   └── errorMiddleware.js              # Standard Express error handler
+│   ├── routes/                             # API path routes definitions
+│   │   └── generateRoutes.js               # Route mapping for POST /api/generate
+│   ├── services/                           # Logic connecting to Google Gemini APIs
+│   │   └── geminiService.js                # Core LLM processing and response schema mapping
+│   ├── utils/                              # Helper functions for the backend
+│   │   └── promptBuilder.js                # Builds and formats structured system prompts
+│   ├── .env                                # Backend environment configuration variables
+│   ├── package.json                        # Backend package and script setup
+│   ├── server.js                           # Server boot entry point, CORS settings, health checks
+│   └── vercel.json                         # Serverless configuration rules for Vercel
 │
-├── frontend/
-│   ├── app/
-│   │   ├── privacy/
-│   │   │   └── page.tsx
-│   │   ├── terms/
-│   │   │   └── page.tsx
-│   │   ├── favicon.ico
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── EmptyState.tsx
-│   │   ├── ExportButtons.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Hero.tsx
-│   │   ├── InputArea.tsx
-│   │   ├── Loading.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── OutputCard.tsx
-│   │   ├── ResultSection.tsx
-│   │   ├── SampleTemplates.tsx
-│   │   └── StatsSection.tsx
-│   ├── hooks/
-│   │   └── useGenerate.ts
-│   ├── public/
-│   │   └── logo.png
-│   ├── services/
-│   │   └── api.ts
-│   ├── types/
-│   │   └── testResult.ts
-│   ├── utils/
-│   │   ├── copyText.ts
-│   │   ├── downloadJson.ts
-│   │   └── exportPDF.ts
-│   ├── .env.local
-│   ├── next-env.d.ts
-│   ├── next.config.ts
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── postcss.config.mjs
-│   ├── tailwind.config.ts
-│   └── tsconfig.json
+├── frontend/                               # Next.js SPA Web Client
+│   ├── app/                                # App Router views and layouts
+│   │   ├── favicon.ico                     # Next.js tab logo file
+│   │   ├── globals.css                     # Global stylesheets, fonts, animations, layout styles
+│   │   ├── layout.tsx                      # Root App Router layout enclosing Navbar/Footer
+│   │   ├── page.tsx                        # Main dashboard, templates grid, feature summaries
+│   │   ├── privacy/                        # Privacy policy route
+│   │   │   └── page.tsx                    # Privacy Policy page details
+│   │   └── terms/                          # Terms of Service route
+│   │       └── page.tsx                    # Terms of Service page details
+│   ├── components/                         # Reusable UI component modules
+│   │   ├── EmptyState.tsx                  # Component displayed when no tests are generated
+│   │   ├── ExportButtons.tsx               # Handles PDF/JSON actions
+│   │   ├── Footer.tsx                      # Custom footer with links and admin contact
+│   │   ├── Hero.tsx                        # Mesh gradient header and floating title transitions
+│   │   ├── InputArea.tsx                   # Prompt textarea area and form submit controls
+│   │   ├── Loading.tsx                     # Progressive 0-99% thinking sequencer UI
+│   │   ├── Navbar.tsx                      # Premium top navigation header
+│   │   ├── OutputCard.tsx                  # Code viewer with syntax highlight and copy functionality
+│   │   ├── ResultSection.tsx               # Outer boundary managing active output cards
+│   │   ├── SampleTemplates.tsx             # Clickable grid examples for fast prompts loading
+│   │   └── StatsSection.tsx                # Viewport count-up numbers displaying test statistics
+│   ├── hooks/                              # React custom state hooks
+│   │   └── useGenerate.ts                  # Integrates frontend UI states with backend API calls
+│   ├── public/                             # Public static assets folder
+│   │   └── logo.png                        # Main app branding logo image file
+│   ├── services/                           # API communication helpers
+│   │   └── api.ts                          # Defines base fetch instances with fallback values
+│   ├── types/                              # TypeScript type interfaces definitions
+│   │   └── testResult.ts                   # Typing interface for AI test suite outputs
+│   ├── utils/                              # Helper utilities
+│   │   ├── copyText.ts                     # Handles secure clipboard copying
+│   │   ├── downloadJson.ts                 # Triggers instant local file JSON downloads
+│   │   └── exportPDF.ts                    # Dynamic PDF report builder
+│   ├── .env.local                          # Frontend local build environments configuration file
+│   ├── next-env.d.ts                       # Next.js TypeScript definitions compiler file
+│   ├── next.config.ts                      # Configuration rules for Next.js routing/headers
+│   ├── package.json                        # Frontend packages, TS types, next scripts configuration
+│   ├── postcss.config.mjs                  # PostCSS styling pipeline config file
+│   ├── tailwind.config.ts                  # Design tokens, custom themes, and core color setup
+│   └── tsconfig.json                       # TypeScript compiler strict mode settings
 │
-├── .gitignore
-└── README.md
+├── .gitignore                              # Defines version control ignored resources
+└── README.md                               # Repository documentation guide
 ```
 
 ---
