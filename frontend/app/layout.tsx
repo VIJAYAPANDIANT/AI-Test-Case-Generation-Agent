@@ -21,13 +21,6 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
-        
-        {/* Footer */}
-        <footer className="border-t border-white/5 bg-slate-950 py-8 text-center text-xs text-slate-500">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p>© {new Date().getFullYear()} TestGen AI. All rights reserved. Created for developers.</p>
-          </div>
-        </footer>
       </body>
     </html>
   );

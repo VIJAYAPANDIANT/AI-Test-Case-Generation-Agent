@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
+import { buildPrompt } from "../utils/promptBuilder.js";
 
 dotenv.config();
 
@@ -83,7 +84,7 @@ export async function generateTestSuite(prompt) {
     contents: [
       {
         role: "user",
-        parts: [{ text: `User requirements:\n\n${prompt}` }]
+        parts: [{ text: buildPrompt(prompt) }]
       }
     ]
   });
