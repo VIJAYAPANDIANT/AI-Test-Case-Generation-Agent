@@ -21,6 +21,18 @@ app.use(express.json());
 // Main Router
 app.use("/api", generateRoutes);
 
+// Root route handler for browser testing
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "TestGen AI Backend API is running successfully.",
+    endpoints: {
+      health: "/health",
+      generate: "/api/generate (POST)"
+    }
+  });
+});
+
 // Catch-all health check route
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK", timestamp: new Date().toISOString() });
@@ -32,3 +44,5 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`[Server] Running on port ${PORT} with CORS enabled for ${corsOrigin}`);
 });
+
+export default app;
