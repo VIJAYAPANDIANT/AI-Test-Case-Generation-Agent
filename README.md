@@ -1,5 +1,17 @@
 # 🚀 TestGen AI – AI-Powered Test Case Generation Agent
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained">
+  <img src="https://img.shields.io/github/license/VIJAYAPANDIANT/College-Discovery-Platform?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+  <img src="https://img.shields.io/badge/Next.js-16.x-blue?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-19.x-20232a?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/PostgreSQL-18.x-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+</div>
+
+---
+
 TestGen AI is a state-of-the-art test case generator designed to create high-coverage test suites instantly. Utilizing the power of **Google Gemini API**, TestGen AI scans your source code, requirements specs, or API endpoints to construct standard, copy-paste ready assertions spanning multiple testing frameworks (Jest, Mocha, PyTest, Supertest, Cypress, Playwright, etc.).
 
 ---
@@ -41,21 +53,69 @@ TestGen AI is a state-of-the-art test case generator designed to create high-cov
 ## 📁 Repository Structure
 
 ```text
-├── backend/                  # Node.js & Express REST API
-│   ├── controllers/          # Request handlers
-│   ├── middleware/           # CORS & error boundary filters
-│   ├── routes/               # API Router endpoints
-│   ├── services/             # Gemini API generation logic
-│   ├── utils/                # Prompt template utilities
-│   ├── server.js             # Main server entrypoint
-│   └── vercel.json           # Vercel backend serverless routing
+.
+├── backend/
+│   ├── controllers/
+│   │   └── generateController.js
+│   ├── middleware/
+│   │   └── errorMiddleware.js
+│   ├── routes/
+│   │   └── generateRoutes.js
+│   ├── services/
+│   │   └── geminiService.js
+│   ├── utils/
+│   │   └── promptBuilder.js
+│   ├── .env
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── server.js
+│   └── vercel.json
 │
-└── frontend/                 # Next.js SPA Web Client
-    ├── app/                  # Route layouts, pages (Home, Privacy, Terms)
-    ├── components/           # UI Elements (Hero, InputArea, Loading, ResultSection, Footer, etc.)
-    ├── hooks/                # Custom React hooks (useGenerate API caller)
-    ├── public/               # Static assets & dynamic SVG logos
-    └── tailwind.config.ts    # Styling theme configuration
+├── frontend/
+│   ├── app/
+│   │   ├── privacy/
+│   │   │   └── page.tsx
+│   │   ├── terms/
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── EmptyState.tsx
+│   │   ├── ExportButtons.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── InputArea.tsx
+│   │   ├── Loading.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── OutputCard.tsx
+│   │   ├── ResultSection.tsx
+│   │   ├── SampleTemplates.tsx
+│   │   └── StatsSection.tsx
+│   ├── hooks/
+│   │   └── useGenerate.ts
+│   ├── public/
+│   │   └── logo.png
+│   ├── services/
+│   │   └── api.ts
+│   ├── types/
+│   │   └── testResult.ts
+│   ├── utils/
+│   │   ├── copyText.ts
+│   │   ├── downloadJson.ts
+│   │   └── exportPDF.ts
+│   ├── .env.local
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   ├── tailwind.config.ts
+│   └── tsconfig.json
+│
+├── .gitignore
+└── README.md
 ```
 
 ---
