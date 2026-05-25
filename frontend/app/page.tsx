@@ -54,27 +54,23 @@ export default function Home() {
     generate,
     isLoading,
     error,
-    result,
-    setResult,
-    setError
+    result
   } = useGenerate();
 
-  const handleGenerateStart = () => {
-    // Handled internally by hook, but we can do custom page resets if needed
-  };
-
-  const handleGenerateSuccess = (data: any) => {
-    // Automatically triggers hook state updates, now handle side-effects like scrolling
-    setTimeout(() => {
-      const resultsEl = document.getElementById("results");
-      if (resultsEl) {
-        resultsEl.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
-  };
-
-  const handleGenerateError = (errMsg: string) => {
-    // Hook automatically logs and handles errors, this allows page specific notifications
+  const handleGenerate = async (prompt: string) => {
+    try {
+      await generate(prompt);
+      
+      // Automatically scroll to results on success
+      setTimeout(() => {
+        const resultsEl = document.getElementById("results");
+        if (resultsEl) {
+          resultsEl.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } catch (err) {
+      // Errors are caught and structured in state by the custom hook
+    }
   };
 
   return (
@@ -88,9 +84,7 @@ export default function Home() {
       {/* Input Generator Form Container */}
       <div className="relative mt-16">
         <InputArea
-          onGenerateStart={handleGenerateStart}
-          onGenerateSuccess={handleGenerateSuccess}
-          onGenerateError={handleGenerateError}
+          onGenerate={handleGenerate}
           isLoading={isLoading}
         />
       </div>
@@ -113,7 +107,7 @@ export default function Home() {
       )}
 
       {/* Test Results Dashboard & Export Actions */}
-      <ResultSection data={result} />
+      {!isLoading && <ResultSection data={result} />}
 
       {/* Features Showcase Section */}
       <section id="features" className="mx-auto max-w-6xl px-4 mt-32 scroll-mt-24">

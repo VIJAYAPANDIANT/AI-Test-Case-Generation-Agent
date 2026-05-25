@@ -2,39 +2,24 @@
 
 import React, { useState } from "react";
 import SampleTemplates from "./SampleTemplates";
-import { generateTestCases } from "../services/api";
 import { Play, Sparkles } from "lucide-react";
 
 interface InputAreaProps {
-  onGenerateStart: () => void;
-  onGenerateSuccess: (data: any) => void;
-  onGenerateError: (error: string) => void;
+  onGenerate: (prompt: string) => void;
   isLoading: boolean;
 }
 
-export default function InputArea({
-  onGenerateStart,
-  onGenerateSuccess,
-  onGenerateError,
-  isLoading
-}: InputAreaProps) {
+export default function InputArea({ onGenerate, isLoading }: InputAreaProps) {
   const [prompt, setPrompt] = useState("");
 
   const handleSelectTemplate = (selectedPrompt: string) => {
     setPrompt(selectedPrompt);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!prompt.trim() || isLoading) return;
-
-    onGenerateStart();
-    try {
-      const data = await generateTestCases(prompt);
-      onGenerateSuccess(data);
-    } catch (err: any) {
-      onGenerateError(err.message || "An unexpected error occurred. Please ensure the backend is running.");
-    }
+    onGenerate(prompt);
   };
 
   return (
